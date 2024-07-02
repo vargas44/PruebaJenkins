@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         features = {"src/main/resources/features/PlataformaIntegracion"},
         glue = {"stepsDefinitions", "framework","PlataformaIntegracion","Google","MiCorreo1_5"}, // Agrega el paquete de los hooks y framework
-        tags =  "@MCIB-138"
+        tags =  "@MCIB-133"
 )
 public class TestRunner {
 }
