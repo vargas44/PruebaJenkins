@@ -1,4 +1,4 @@
-@MCIB-138
+@PPDIPI-3167
 Feature: Flujo principal de usuario en el sistema de ecommerce
   Background:
     Given el usuario se situa en el ambiente de pruebas
