@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="232.027" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Flujo principal de usuario en el sistema de ecommerce" name="Usuario realiza una compra y verifica la sincronización con MiCorreo" time="231.634">
+<system-out><![CDATA[
+Given el usuario se situa en el ambiente de pruebas.........................passed
+And visualiza los campos de usuario y contrasena............................passed
+Given que el usuario habilitado inicia sesion en el dashboard...............passed
+When ingresa al ecommerce...................................................passed
+And anade articulos al carrito..............................................passed
+And realiza el proceso de checkout obteniendo los numeros de pedido y monto de cotizacion.passed
+And se visualizan los numeros de pedido en el dashboard y se importa el mismo.passed
+Then los numeros de pedido se visualizan dentro de la plataforma MiCorreo...passed
+And los datos en MiCorreo coinciden con los del ecommerce...................passed
+]]></system-out>
+</testcase>
+</testsuite>
