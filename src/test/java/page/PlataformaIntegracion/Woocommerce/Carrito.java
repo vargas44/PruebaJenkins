@@ -21,15 +21,24 @@ public class Carrito extends BasePage {
     }
 
     public void verCarrito(){
-
-        waitForSeconds(25);
-        click(btnCarrito);
-        System.out.println("clic en el boton ver carrito");
-        System.out.println("Se visualiza el carrito");
         click(radioBtnSegundaOpcion);
         waitForSeconds(10);
         click(btnFinalizarCompra);
         System.out.println("Se hizo clic en el boton finalizar compra");
     }
 
+    //1
+    public void seleccionarSegundaopcionDeEnvio(){
+        click(radioBtnSegundaOpcion);
+    }
+    //2
+    public void finalizarCompra(){
+        scrollPageUpDown(0,1);
+        waitForSeconds(10);
+        click(btnFinalizarCompra);
+    }
+
+    //Flujo a seguir en el carrito
+    //1 - seleccionar una opcion de envio que sea a domicilio
+    //2 - Hacer un clic en el boton "Finalizar Compra" para dirigirse al checkout
 }

@@ -20,9 +20,7 @@ public class WoocommerSteps {
 
     private WebDriver driver = DriverManager.getDriver();
     private String baseUrl = DriverManager.config.getProperty("url");
-
     private Dashboard dashboard = new Dashboard(driver);
-
     private Home home = new Home(driver);
     private Carrito carrito = new Carrito(driver);
     private CheckOut checkout = new CheckOut(driver);
@@ -55,6 +53,7 @@ public class WoocommerSteps {
     @And("anade articulos al carrito")
     public void anadeArticulosAlCarrito() {
         home.agregarAlCarrito();
+        home.irAlCarrito();
     }
     @When("realiza el proceso de checkout obteniendo los numeros de pedido y monto de cotizacion")
     public void realizaElProcesoDeCheckoutObteniendoLosNumerosDePedidoYMontoDeCotizacion() {

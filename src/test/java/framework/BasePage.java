@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 
@@ -378,6 +379,12 @@ public class BasePage {
             actions.sendKeys(Keys.ENTER).perform();
     }
 
+    public void sendBorrar(int repetir) {
+        Actions actions = new Actions(driver);
+        for (int i=0;i<repetir;i++){actions.sendKeys(Keys.DELETE).perform();}
+
+    }
+
     public void scrollPageUpDown(int Up,int Down) {
         Actions actions = new Actions(driver);
         int i;
@@ -390,6 +397,54 @@ public class BasePage {
         }
 
     }
+
+    public String generadorCorreos(){
+        String[] domains = {"gmail.com", "yahoo.com", "hotmail.com", "outlook.com"};
+        Random random = new Random();
+
+        // Generar un nombre de usuario aleatorio
+        String username = "user" + random.nextInt(1000);
+
+        // Seleccionar un dominio aleatorio
+        String domain = domains[random.nextInt(domains.length)];
+
+        // Crear la dirección de correo electrónico aleatoria
+        String email = username + "@" + domain;
+
+        return email;
+    }
+    public String generadornombres(){
+        Random random = new Random();
+        // Generar un nombre de usuario aleatorio
+        String username = "user" + random.nextInt(1000);
+        return username;
+    }
+
+    public String caracteresAleatorios (int length) {
+            String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random random = new Random();
+            StringBuilder sb = new StringBuilder(length);
+
+            for (int i = 0; i < length; i++) {
+                int index = random.nextInt(characters.length());
+                sb.append(characters.charAt(index));
+            }
+
+            return sb.toString();
+        }
+    public String numerosAleatorios (int length) {
+        String characters = "012356789";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(characters.length());
+            sb.append(characters.charAt(index));
+        }
+
+        return sb.toString();
+    }
+
 
 }
 

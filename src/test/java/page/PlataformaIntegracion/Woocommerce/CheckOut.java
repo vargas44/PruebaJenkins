@@ -31,6 +31,71 @@ public class CheckOut extends BasePage {
         super(driver);
     }
 
+
+
+    public void checkTienda(){
+        waitForSeconds(1);
+        System.out.println("se hace un clic en el Finalizar Compra");
+        click(checkEnvioAlterno);
+        System.out.println("Click en el check de envio alterno");
+        waitForSeconds(10);
+        //click(radioBtnSegundaOpcion);
+        scrollPageUpDown(0,3);
+    }
+
+
+
+
+    //1 - 2
+    public void quitarEnvioAlterno(){
+        waitForSeconds(1);
+        click(checkEnvioAlterno);
+        scrollPageUpDown(0,3);
+    }
+
+    //2
+    public void seleccionOpcionEnvioDomicioOp2(){
+        waitForSeconds(17);
+        click(radioBtnSegundaOpcion);
+        scrollPageUpDown(0,1);
+
+    }
+    public void seleccionOpcionSucursalOp4(){
+        waitForSeconds(17);
+        click(radioBtnCuartaOpcion);
+        scrollPageUpDown(0,1);
+    }
+
+    //3
+    public void seleccionOpcionSucursalOp1(){
+        waitForSeconds(17);
+        click(radioBtnPrimeraOpcion);
+    }
+    public void seleccionOpcionEnvioDomicioOp3(){
+        waitForSeconds(17);
+        click(radioBtnTerceraOpcion);
+    }
+    //4
+    public void seleccionarEnvioSucursal(){
+        waitForSeconds(17);
+        click(btnseleccionSucursal);
+    }
+    //5
+    public void escribirEnSucursal(){
+        click(cuadroTexto);
+        writeText(cuadroTexto,"Capital");
+        sendEnter();
+    }
+
+    //6
+    public void finalizarPedido(){
+        waitForSeconds(25);
+        click(btnRealizarElPedido);
+        waitForSeconds(10);
+        mostrarDatosDelPedido();
+    }
+
+    //7
     public void mostrarDatosDelPedido(){
         String NpedidoTienda =  extraerNumeros(numeroPedido);
         String FechaPedido = getText(fechaLocator);
@@ -43,38 +108,22 @@ public class CheckOut extends BasePage {
 
     }
 
-    public void checkTienda(){
-//        waitForSeconds(2);
-//        click(btnFinalizarCompra);
-        waitForSeconds(1);
-        System.out.println("se hace un clic en el Finalizar Compra");
-        click(checkEnvioAlterno);
-        System.out.println("Click en el check de envio alterno");
-        waitForSeconds(10);
-        //click(radioBtnSegundaOpcion);
-        scrollPageUpDown(0,3);
-    }
+    //Flujo a seguir en el checkout
+    //1 - Quitar el check del envio alterno
+    //2 - Hacer un scroll hacia abajo y esperar que carguen la opciones de envio
+    //3 - Seleccionar la primera opcion de envio y que sea un envio a sucursal
+    //4 - Seleccionar el envio a sucursal
+    //5 - Escribir en el cuadro de texto de sucursal y seleccionar la primera opcion
+    //6 - Hacer un clic en el boton de Finalizar pedido y se redirigira al detalle del pedido
+    //7 - Capturar los datos del pedido
 
-    public void seleccionEnvioSucursal(){
-        waitForSeconds(10);
-        click(radioBtnPrimeraOpcion);
-        waitForSeconds(10);
-        click(btnseleccionSucursal);
-        click(cuadroTexto);
-        writeText(cuadroTexto,"Capital");
-        sendEnter();
-        waitForSeconds(10);
+
+    public void generarPedidoCheckOut(){
+        quitarEnvioAlterno();
+        seleccionOpcionEnvioDomicioOp2();
         finalizarPedido();
-    }
-
-    public void finalizarPedido(){
-        waitForSeconds(25);
-        click(btnRealizarElPedido);
-        System.out.println("click en realizar pedido");
-        waitForSeconds(10);
         mostrarDatosDelPedido();
     }
-
 
 }
 
