@@ -1,4 +1,4 @@
-@EnvioADomicilioOp3
+@PPDIPI-3234
 Feature: Compra de productos en la tienda a través de WordPress y Correo Argentino
   Como usuario de la tienda
   Quiero comprar productos y seleccionar opciones de envío

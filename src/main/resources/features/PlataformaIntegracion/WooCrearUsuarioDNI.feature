@@ -1,4 +1,4 @@
-@CrearCuentaDNI
+@PPDIPI-3224
 Feature: Validar configuracion de servicios en WordPress
 
   Scenario: Crear un usuario en el plugin
