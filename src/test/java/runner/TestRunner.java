@@ -3,6 +3,7 @@ package runner;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -15,7 +16,9 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         features = {"src/main/resources/features/PlataformaIntegracion"},
         glue = {"stepsDefinitions", "framework","PlataformaIntegracion","Google","MiCorreo1_5"}, // Agrega el paquete de los hooks y framework
-        tags =  "@WooCompletarTodosLosPedidosPaqAr" //"@PPDIPI-3167"
+        tags =  "@PPDIPI-3221"
+        //"@PPDIPI-3167"
 )
 public class TestRunner {
 }
+

@@ -1,4 +1,5 @@
-@PPDIPI-3167
+# commentPPDIPI-3167 primer caso en aqui
+@PPDIPI-3236
 Feature: Flujo principal de usuario en el sistema de ecommerce
   Background:
     Given el usuario se situa en el ambiente de pruebas

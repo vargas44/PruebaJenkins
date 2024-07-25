@@ -1,4 +1,4 @@
-@LoginConfiguracionPaq.Ar
+@PPDIPI-3222
 Feature: Validar configuracion de servicios en WordPress
 
   Scenario: Configuracion de servicio Mi Correo en WordPress
